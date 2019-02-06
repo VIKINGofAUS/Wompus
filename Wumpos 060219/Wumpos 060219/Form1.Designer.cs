@@ -76,9 +76,10 @@
             // 
             // Button_0
             // 
-            this.Button_0.Location = new System.Drawing.Point(16, 19);
+            this.Button_0.Location = new System.Drawing.Point(21, 23);
+            this.Button_0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button_0.Name = "Button_0";
-            this.Button_0.Size = new System.Drawing.Size(75, 23);
+            this.Button_0.Size = new System.Drawing.Size(100, 28);
             this.Button_0.TabIndex = 0;
             this.Button_0.Text = "0";
             this.Button_0.UseVisualStyleBackColor = true;
@@ -87,19 +88,23 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(114, 24);
+            this.label1.Location = new System.Drawing.Point(152, 30);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(59, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Text = "Dickbutt";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.Button_0);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 25);
+            this.groupBox1.Location = new System.Drawing.Point(16, 31);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(181, 52);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(241, 64);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox0";
@@ -108,18 +113,21 @@
             // 
             this.groupBox2.Controls.Add(this.Button_1);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 83);
+            this.groupBox2.Location = new System.Drawing.Point(16, 102);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(181, 52);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(241, 64);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox1";
             // 
             // Button_1
             // 
-            this.Button_1.Location = new System.Drawing.Point(16, 19);
+            this.Button_1.Location = new System.Drawing.Point(21, 23);
+            this.Button_1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button_1.Name = "Button_1";
-            this.Button_1.Size = new System.Drawing.Size(75, 23);
+            this.Button_1.Size = new System.Drawing.Size(100, 28);
             this.Button_1.TabIndex = 0;
             this.Button_1.Text = "1";
             this.Button_1.UseVisualStyleBackColor = true;
@@ -128,9 +136,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(114, 24);
+            this.label2.Location = new System.Drawing.Point(152, 30);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(46, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
             // 
@@ -138,18 +147,21 @@
             // 
             this.groupBox3.Controls.Add(this.Button_2);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(12, 141);
+            this.groupBox3.Location = new System.Drawing.Point(16, 174);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(181, 52);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(241, 64);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox2";
             // 
             // Button_2
             // 
-            this.Button_2.Location = new System.Drawing.Point(16, 19);
+            this.Button_2.Location = new System.Drawing.Point(21, 23);
+            this.Button_2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button_2.Name = "Button_2";
-            this.Button_2.Size = new System.Drawing.Size(75, 23);
+            this.Button_2.Size = new System.Drawing.Size(100, 28);
             this.Button_2.TabIndex = 0;
             this.Button_2.Text = "2";
             this.Button_2.UseVisualStyleBackColor = true;
@@ -158,9 +170,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(114, 24);
+            this.label3.Location = new System.Drawing.Point(152, 30);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(46, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "label3";
             // 
@@ -168,18 +181,21 @@
             // 
             this.groupBox4.Controls.Add(this.Button_3);
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Location = new System.Drawing.Point(12, 199);
+            this.groupBox4.Location = new System.Drawing.Point(16, 245);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(181, 52);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Size = new System.Drawing.Size(241, 64);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "groupBox3";
             // 
             // Button_3
             // 
-            this.Button_3.Location = new System.Drawing.Point(16, 19);
+            this.Button_3.Location = new System.Drawing.Point(21, 23);
+            this.Button_3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button_3.Name = "Button_3";
-            this.Button_3.Size = new System.Drawing.Size(75, 23);
+            this.Button_3.Size = new System.Drawing.Size(100, 28);
             this.Button_3.TabIndex = 0;
             this.Button_3.Text = "3";
             this.Button_3.UseVisualStyleBackColor = true;
@@ -188,9 +204,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(114, 24);
+            this.label4.Location = new System.Drawing.Point(152, 30);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(46, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "label4";
             // 
@@ -198,18 +215,21 @@
             // 
             this.groupBox5.Controls.Add(this.Button_4);
             this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Location = new System.Drawing.Point(12, 257);
+            this.groupBox5.Location = new System.Drawing.Point(16, 316);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(181, 52);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Size = new System.Drawing.Size(241, 64);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "groupBox4";
             // 
             // Button_4
             // 
-            this.Button_4.Location = new System.Drawing.Point(16, 19);
+            this.Button_4.Location = new System.Drawing.Point(21, 23);
+            this.Button_4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button_4.Name = "Button_4";
-            this.Button_4.Size = new System.Drawing.Size(75, 23);
+            this.Button_4.Size = new System.Drawing.Size(100, 28);
             this.Button_4.TabIndex = 0;
             this.Button_4.Text = "4";
             this.Button_4.UseVisualStyleBackColor = true;
@@ -218,9 +238,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(114, 24);
+            this.label5.Location = new System.Drawing.Point(152, 30);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(46, 17);
             this.label5.TabIndex = 1;
             this.label5.Text = "label5";
             // 
@@ -228,18 +249,21 @@
             // 
             this.groupBox6.Controls.Add(this.Button_5);
             this.groupBox6.Controls.Add(this.label6);
-            this.groupBox6.Location = new System.Drawing.Point(12, 315);
+            this.groupBox6.Location = new System.Drawing.Point(16, 388);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(181, 52);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Size = new System.Drawing.Size(241, 64);
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "groupBox5";
             // 
             // Button_5
             // 
-            this.Button_5.Location = new System.Drawing.Point(16, 19);
+            this.Button_5.Location = new System.Drawing.Point(21, 23);
+            this.Button_5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button_5.Name = "Button_5";
-            this.Button_5.Size = new System.Drawing.Size(75, 23);
+            this.Button_5.Size = new System.Drawing.Size(100, 28);
             this.Button_5.TabIndex = 0;
             this.Button_5.Text = "5";
             this.Button_5.UseVisualStyleBackColor = true;
@@ -248,9 +272,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(114, 24);
+            this.label6.Location = new System.Drawing.Point(152, 30);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(46, 17);
             this.label6.TabIndex = 1;
             this.label6.Text = "label6";
             // 
@@ -258,18 +283,21 @@
             // 
             this.groupBox7.Controls.Add(this.Button_6);
             this.groupBox7.Controls.Add(this.label7);
-            this.groupBox7.Location = new System.Drawing.Point(12, 373);
+            this.groupBox7.Location = new System.Drawing.Point(16, 459);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(181, 52);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Size = new System.Drawing.Size(241, 64);
             this.groupBox7.TabIndex = 3;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "groupBox6";
             // 
             // Button_6
             // 
-            this.Button_6.Location = new System.Drawing.Point(16, 19);
+            this.Button_6.Location = new System.Drawing.Point(21, 23);
+            this.Button_6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button_6.Name = "Button_6";
-            this.Button_6.Size = new System.Drawing.Size(75, 23);
+            this.Button_6.Size = new System.Drawing.Size(100, 28);
             this.Button_6.TabIndex = 0;
             this.Button_6.Text = "6";
             this.Button_6.UseVisualStyleBackColor = true;
@@ -278,9 +306,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(114, 24);
+            this.label7.Location = new System.Drawing.Point(152, 30);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.Size = new System.Drawing.Size(46, 17);
             this.label7.TabIndex = 1;
             this.label7.Text = "label7";
             // 
@@ -288,18 +317,21 @@
             // 
             this.groupBox8.Controls.Add(this.Button_7);
             this.groupBox8.Controls.Add(this.label8);
-            this.groupBox8.Location = new System.Drawing.Point(12, 431);
+            this.groupBox8.Location = new System.Drawing.Point(16, 530);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(181, 52);
+            this.groupBox8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox8.Size = new System.Drawing.Size(241, 64);
             this.groupBox8.TabIndex = 3;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "groupBox7";
             // 
             // Button_7
             // 
-            this.Button_7.Location = new System.Drawing.Point(16, 19);
+            this.Button_7.Location = new System.Drawing.Point(21, 23);
+            this.Button_7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button_7.Name = "Button_7";
-            this.Button_7.Size = new System.Drawing.Size(75, 23);
+            this.Button_7.Size = new System.Drawing.Size(100, 28);
             this.Button_7.TabIndex = 0;
             this.Button_7.Text = "7";
             this.Button_7.UseVisualStyleBackColor = true;
@@ -308,9 +340,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(114, 24);
+            this.label8.Location = new System.Drawing.Point(152, 30);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.Size = new System.Drawing.Size(46, 17);
             this.label8.TabIndex = 1;
             this.label8.Text = "label8";
             // 
@@ -318,18 +351,21 @@
             // 
             this.groupBox9.Controls.Add(this.Button_8);
             this.groupBox9.Controls.Add(this.label9);
-            this.groupBox9.Location = new System.Drawing.Point(12, 489);
+            this.groupBox9.Location = new System.Drawing.Point(16, 602);
+            this.groupBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(181, 52);
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox9.Size = new System.Drawing.Size(241, 64);
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "groupBox9";
             // 
             // Button_8
             // 
-            this.Button_8.Location = new System.Drawing.Point(16, 19);
+            this.Button_8.Location = new System.Drawing.Point(21, 23);
+            this.Button_8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button_8.Name = "Button_8";
-            this.Button_8.Size = new System.Drawing.Size(75, 23);
+            this.Button_8.Size = new System.Drawing.Size(100, 28);
             this.Button_8.TabIndex = 0;
             this.Button_8.Text = "8";
             this.Button_8.UseVisualStyleBackColor = true;
@@ -338,9 +374,10 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(114, 24);
+            this.label9.Location = new System.Drawing.Point(152, 30);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.Size = new System.Drawing.Size(46, 17);
             this.label9.TabIndex = 1;
             this.label9.Text = "label9";
             // 
@@ -348,18 +385,21 @@
             // 
             this.groupBox10.Controls.Add(this.Button_9);
             this.groupBox10.Controls.Add(this.label10);
-            this.groupBox10.Location = new System.Drawing.Point(12, 547);
+            this.groupBox10.Location = new System.Drawing.Point(16, 673);
+            this.groupBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(181, 52);
+            this.groupBox10.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox10.Size = new System.Drawing.Size(241, 64);
             this.groupBox10.TabIndex = 3;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "groupBox10";
             // 
             // Button_9
             // 
-            this.Button_9.Location = new System.Drawing.Point(16, 19);
+            this.Button_9.Location = new System.Drawing.Point(21, 23);
+            this.Button_9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button_9.Name = "Button_9";
-            this.Button_9.Size = new System.Drawing.Size(75, 23);
+            this.Button_9.Size = new System.Drawing.Size(100, 28);
             this.Button_9.TabIndex = 0;
             this.Button_9.Text = "9";
             this.Button_9.UseVisualStyleBackColor = true;
@@ -368,9 +408,10 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(114, 24);
+            this.label10.Location = new System.Drawing.Point(152, 30);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.Size = new System.Drawing.Size(54, 17);
             this.label10.TabIndex = 1;
             this.label10.Text = "label10";
             // 
@@ -378,18 +419,21 @@
             // 
             this.groupBox11.Controls.Add(this.Button_10);
             this.groupBox11.Controls.Add(this.label11);
-            this.groupBox11.Location = new System.Drawing.Point(12, 605);
+            this.groupBox11.Location = new System.Drawing.Point(16, 745);
+            this.groupBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(181, 52);
+            this.groupBox11.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox11.Size = new System.Drawing.Size(241, 64);
             this.groupBox11.TabIndex = 3;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "groupBox11";
             // 
             // Button_10
             // 
-            this.Button_10.Location = new System.Drawing.Point(16, 19);
+            this.Button_10.Location = new System.Drawing.Point(21, 23);
+            this.Button_10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button_10.Name = "Button_10";
-            this.Button_10.Size = new System.Drawing.Size(75, 23);
+            this.Button_10.Size = new System.Drawing.Size(100, 28);
             this.Button_10.TabIndex = 0;
             this.Button_10.Text = "10";
             this.Button_10.UseVisualStyleBackColor = true;
@@ -398,17 +442,18 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(114, 24);
+            this.label11.Location = new System.Drawing.Point(152, 30);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.Size = new System.Drawing.Size(54, 17);
             this.label11.TabIndex = 1;
             this.label11.Text = "label11";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(208, 673);
+            this.ClientSize = new System.Drawing.Size(277, 828);
             this.Controls.Add(this.groupBox11);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox9);
@@ -420,6 +465,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Mood Meter";
             this.Load += new System.EventHandler(this.Form1_Load);

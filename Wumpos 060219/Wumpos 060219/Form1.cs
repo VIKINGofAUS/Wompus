@@ -79,5 +79,10 @@ namespace Wumpos_060219
         {
             file_handler.openFileAndWriteNumber(path, 0);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
