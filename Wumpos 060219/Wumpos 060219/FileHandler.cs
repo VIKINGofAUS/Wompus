@@ -9,21 +9,22 @@ namespace Wumpos_060219
 {
     class FileHandler
     {
-        public bool openFileAndWriteNumber(string fileName, int buttonNumber)
+        public bool openFileAndWriteNumber(string fileName, int buttonNumber, string timeStamp, string username = "dave")
         {
             // opens the specified file
+            username = System.Security.Principal.WindowsIdentity.GetCurrent().Name; ;
             string path = @".\Example.txt";
             if (!File.Exists(fileName))
             {
                 File.Create(fileName);
                 TextWriter tw = new StreamWriter(fileName);
-                tw.WriteLine(buttonNumber);
+                tw.WriteLine(buttonNumber + " " + timeStamp + " " + username );
                 tw.Close();
             }
             else if (File.Exists(fileName))
             {
                 TextWriter tw = new StreamWriter(fileName);
-                tw.WriteLine(buttonNumber);
+                tw.WriteLine(buttonNumber + " " + timeStamp + " " + username);
                 tw.Close();
             }
 
