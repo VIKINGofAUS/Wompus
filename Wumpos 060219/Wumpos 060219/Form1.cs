@@ -96,10 +96,5 @@ namespace Wumpos_060219
             String timeStamp = GetTimestamp(DateTime.Now);
             file_handler.openFileAndWriteNumber(path, 0, timeStamp);
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
