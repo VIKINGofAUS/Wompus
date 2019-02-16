@@ -14,7 +14,7 @@ namespace Wumpos_060219
     class DataHandler
     {
 
-        private const string URL = "http://127.0.0.1/wumpus";
+        private const string URL = "http://www.wumpos.com";
 
         
         public bool sendToApi(string name, string score, string timeStamp)
