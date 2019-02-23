@@ -16,6 +16,7 @@ namespace Wumpos_060219
         {
 
             InitializeComponent();
+            
         }
 
         DataHandler data_handler = new DataHandler();
@@ -26,15 +27,14 @@ namespace Wumpos_060219
             return value.ToString("yyyyMMddHHmmssffff");
         }
 
-        private void Button_0_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
             String timeStamp = GetTimestamp(DateTime.Now);
-            string name = "john";
-            string score = "0";
-            data_handler.sendToApi(name, score, timeStamp);
+            Button_5.Select();
+            label1.Select();
         }
 
-        private void Button_1_Click(object sender, EventArgs e)
+        private void Button_1_Click_1(object sender, EventArgs e)
         {
             String timeStamp = GetTimestamp(DateTime.Now);
             string name = "john";
@@ -42,7 +42,7 @@ namespace Wumpos_060219
             data_handler.sendToApi(name, score, timeStamp);
         }
 
-        private void Button_2_Click(object sender, EventArgs e)
+        private void Button_2_Click_1(object sender, EventArgs e)
         {
             String timeStamp = GetTimestamp(DateTime.Now);
             string name = "john";
@@ -50,7 +50,7 @@ namespace Wumpos_060219
             data_handler.sendToApi(name, score, timeStamp);
         }
 
-        private void Button_3_Click(object sender, EventArgs e)
+        private void Button_3_Click_1(object sender, EventArgs e)
         {
             String timeStamp = GetTimestamp(DateTime.Now);
             string name = "john";
@@ -58,16 +58,15 @@ namespace Wumpos_060219
             data_handler.sendToApi(name, score, timeStamp);
         }
 
-        private void Button_4_Click(object sender, EventArgs e)
+        private void Button_4_Click_1(object sender, EventArgs e)
         {
             String timeStamp = GetTimestamp(DateTime.Now);
             string name = "john";
             string score = "4";
             data_handler.sendToApi(name, score, timeStamp);
-
         }
 
-        private void Button_5_Click(object sender, EventArgs e)
+        private void Button_5_Click_1(object sender, EventArgs e)
         {
             String timeStamp = GetTimestamp(DateTime.Now);
             string name = "john";
@@ -75,7 +74,7 @@ namespace Wumpos_060219
             data_handler.sendToApi(name, score, timeStamp);
         }
 
-        private void Button_6_Click(object sender, EventArgs e)
+        private void Button_6_Click_1(object sender, EventArgs e)
         {
             String timeStamp = GetTimestamp(DateTime.Now);
             string name = "john";
@@ -83,7 +82,7 @@ namespace Wumpos_060219
             data_handler.sendToApi(name, score, timeStamp);
         }
 
-        private void Button_7_Click(object sender, EventArgs e)
+        private void Button_7_Click_1(object sender, EventArgs e)
         {
             String timeStamp = GetTimestamp(DateTime.Now);
             string name = "john";
@@ -91,7 +90,7 @@ namespace Wumpos_060219
             data_handler.sendToApi(name, score, timeStamp);
         }
 
-        private void Button_8_Click(object sender, EventArgs e)
+        private void Button_8_Click_1(object sender, EventArgs e)
         {
             String timeStamp = GetTimestamp(DateTime.Now);
             string name = "john";
@@ -99,7 +98,7 @@ namespace Wumpos_060219
             data_handler.sendToApi(name, score, timeStamp);
         }
 
-        private void Button_9_Click(object sender, EventArgs e)
+        private void Button_9_Click_1(object sender, EventArgs e)
         {
             String timeStamp = GetTimestamp(DateTime.Now);
             string name = "john";
@@ -107,7 +106,7 @@ namespace Wumpos_060219
             data_handler.sendToApi(name, score, timeStamp);
         }
 
-        private void Button_10_Click(object sender, EventArgs e)
+        private void Button_10_Click_1(object sender, EventArgs e)
         {
             String timeStamp = GetTimestamp(DateTime.Now);
             string name = "john";
@@ -115,9 +114,18 @@ namespace Wumpos_060219
             data_handler.sendToApi(name, score, timeStamp);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Button_1_Paint(object sender, PaintEventArgs e)
         {
-            String timeStamp = GetTimestamp(DateTime.Now);
+            ControlPaint.DrawBorder(e.Graphics, Button_1.ClientRectangle,
+                SystemColors.ControlLightLight, 2, ButtonBorderStyle.Outset,
+                SystemColors.ControlLightLight, 2, ButtonBorderStyle.Outset,
+                SystemColors.ControlLightLight, 2, ButtonBorderStyle.Outset,
+                SystemColors.ControlLightLight, 2, ButtonBorderStyle.Outset);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
