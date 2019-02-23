@@ -1,8 +1,0 @@
-#test
-function print(object<T>) {
-    for i in length of object\
-        system.println.out(object)
-}
-
-
-print(this)
