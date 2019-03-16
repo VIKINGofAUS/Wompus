@@ -1,0 +1,6 @@
+C:\Users\61421\source\repos\New Perspectives\New Perspectives Installer\bin\Debug\New_Perspectives_Installer.msi
+C:\Users\61421\source\repos\New Perspectives\New Perspectives Installer\bin\Debug\New_Perspectives_Installer.wixpdb
+obj\Debug\Product.wixobj
+obj\Debug\New Perspectives Installer.wixproj.BindContentsFileListnull.txt
+obj\Debug\New Perspectives Installer.wixproj.BindOutputsFileListnull.txt
+obj\Debug\New Perspectives Installer.wixproj.BindBuiltOutputsFileListnull.txt

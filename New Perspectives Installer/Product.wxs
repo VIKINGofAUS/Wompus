@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"><?define New Perspectives_TargetDir=$(var.New Perspectives.TargetDir)?>
+	<Product Id="{7376A3F5-5E54-441E-9DBC-6061E766C105}" Name="New_Perspectives_Installer" Language="1033" Version="1.0.0.0" Manufacturer="Wumpos" UpgradeCode="489d5624-6cbd-4697-a8a7-6cd38f17d4f5">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of New Perspectives is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="New_Perspectives_Installer" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationShortcut" />
+      <ComponentRef Id="ApplicationShortcutDesktop" />
+      <ComponentRef Id="ApplicationShortcutStartup" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="New_Perspectives_Installer" />
+			</Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="New Perspectives"/>
+      </Directory>
+      <Directory Id="DesktopFolder" Name="Desktop"/>
+      <Directory Id="StartupFolder" SourceName="Startup"/>
+		</Directory>
+	</Fragment>
+
+  <Fragment>
+
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="{453A4889-49AF-4064-81AF-BE5BCA151084}">
+        <Shortcut Id="ApplicationStartMenuShortcut" Name="New Perspectives" Description="New Perspectives" Target="[INSTALLFOLDER]New Perspectives.exe" WorkingDirectory="INSTALLFOLDER" />
+        <RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\New Perspectives" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="ApplicationShortcutDesktop" Guid="{E19480BE-361B-4DE1-BC4E-99DB1FF3DBF2}">
+        <Shortcut Id="ApplicationDesktopShortcut" Name="New Perspectives" Description="New Perspectives" Target="[INSTALLFOLDER]New Perspectives.exe" WorkingDirectory="INSTALLFOLDER" />
+        <RemoveFolder Id="RemoveDesktopFolder" Directory="DesktopFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\New Perspectives" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="StartupFolder">
+      <Component Id="ApplicationShortcutStartup" Guid="{FA4EA951-4F95-4895-B010-DC36D67133F1}">
+        <Shortcut Id="ApplicationStartupShortcut" Name="New Perspectives" Description="New Perspectives" Target="[INSTALLFOLDER]New Perspectives.exe" WorkingDirectory="INSTALLFOLDER" />
+        <RemoveFolder Id="RemoveStartupFolder" Directory="StartupFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\New Perspectives" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+
+
+
+  </Fragment>
+  
+  
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+			<Component Id="RestSharp.dll" Guid="770612fa-0849-4c9b-ba40-55cd04796c8d">
+			  <File Id="RestSharp.dll" Name="RestSharp.dll" Source="$(var.New Perspectives_TargetDir)RestSharp.dll" />
+			</Component>
+			<Component Id="New_Perspectives.exe.config" Guid="7d94fdaf-fe12-42a7-ad52-3b722ef7a0ed">
+			  <File Id="New_Perspectives.exe.config" Name="New Perspectives.exe.config" Source="$(var.New Perspectives_TargetDir)New Perspectives.exe.config" />
+			</Component>
+			<Component Id="New_Perspectives.exe" Guid="9122ca8c-a4f0-49a0-99b7-5173d3cb1ed9">
+			  <File Id="New_Perspectives.exe" Name="New Perspectives.exe" Source="$(var.New Perspectives_TargetDir)New Perspectives.exe" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

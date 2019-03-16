@@ -1,0 +1,13 @@
+C:\Users\61421\source\repos\New Perspectives\New Perspectives\bin\Debug\New Perspectives.exe.config
+C:\Users\61421\source\repos\New Perspectives\New Perspectives\bin\Debug\New Perspectives.exe
+C:\Users\61421\source\repos\New Perspectives\New Perspectives\bin\Debug\New Perspectives.pdb
+C:\Users\61421\source\repos\New Perspectives\New Perspectives\obj\Debug\New_Perspectives.Form1.resources
+C:\Users\61421\source\repos\New Perspectives\New Perspectives\obj\Debug\New_Perspectives.Properties.Resources.resources
+C:\Users\61421\source\repos\New Perspectives\New Perspectives\obj\Debug\New Perspectives.csproj.GenerateResource.cache
+C:\Users\61421\source\repos\New Perspectives\New Perspectives\obj\Debug\New Perspectives.csproj.CoreCompileInputs.cache
+C:\Users\61421\source\repos\New Perspectives\New Perspectives\obj\Debug\New Perspectives.exe
+C:\Users\61421\source\repos\New Perspectives\New Perspectives\obj\Debug\New Perspectives.pdb
+C:\Users\61421\source\repos\New Perspectives\New Perspectives\bin\Debug\RestSharp.dll
+C:\Users\61421\source\repos\New Perspectives\New Perspectives\bin\Debug\RestSharp.xml
+C:\Users\61421\source\repos\New Perspectives\New Perspectives\obj\Debug\New Perspectives.csproj.CopyComplete
+C:\Users\61421\source\repos\New Perspectives\New Perspectives\obj\Debug\New Perspectives.csprojAssemblyReference.cache
