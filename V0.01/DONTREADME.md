@@ -1,1 +1,0 @@
-# Wompus-Co
