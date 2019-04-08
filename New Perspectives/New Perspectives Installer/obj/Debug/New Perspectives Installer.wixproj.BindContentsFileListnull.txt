@@ -1,0 +1,3 @@
+C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\bin\Debug\New Perspectives.exe
+C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\bin\Debug\New Perspectives.exe.config
+C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\bin\Debug\RestSharp.dll

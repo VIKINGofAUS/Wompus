@@ -20,10 +20,10 @@
 				<Directory Id="INSTALLFOLDER" Name="New_Perspectives_Installer" />
 			</Directory>
       <Directory Id="ProgramMenuFolder">
-        <Directory Id="ApplicationProgramsFolder" Name="New Perspectives"/>
+        <Directory Id="ApplicationProgramsFolder" Name="New Perspectives" />
       </Directory>
-      <Directory Id="DesktopFolder" Name="Desktop"/>
-      <Directory Id="StartupFolder" SourceName="Startup"/>
+      <Directory Id="DesktopFolder" Name="Desktop" />
+      <Directory Id="StartupFolder" SourceName="Startup" />
 		</Directory>
 	</Fragment>
 

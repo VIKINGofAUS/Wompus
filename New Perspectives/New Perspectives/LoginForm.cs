@@ -7,37 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
+using System.IO;
 
 namespace New_Perspectives
 {
     public partial class LoginForm : Form
     {
         DataHandler data_handler = new DataHandler();
-        public string Score;
-        public string TimeStamp;
-        public string UserKey;
         public LoginForm()
         {
             InitializeComponent();
         }
 
-        public LoginForm(string key, string SentText,String SentTimeStamp) : this()
-        {
-            Score = SentText;
-            TimeStamp = SentTimeStamp;
-            UserKey = key;
-        }
-
         private void aSubmitButton_Click(object sender, EventArgs e)
         {
             string authenticatedStatus = data_handler.Authenticate(aUsernameTextbox.Text, aPasswordTexbox.Text);
-            if (authenticatedStatus == "Successful Authentication")
+            if (authenticatedStatus == "Not Authenticated")
             {
-                data_handler.sendUserMoodToApi(UserKey, Score, TimeStamp);
-                this.Hide();
+                aincorrectLoginLable.Visible = true;
+
             }
             else {
-                aincorrectLoginLable.Visible = true;
+                this.Hide();
             }
 
         }

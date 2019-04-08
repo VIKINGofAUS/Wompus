@@ -11,8 +11,8 @@ namespace New_Perspectives
             InitializeComponent();
         }
 
-        public void ShowLoginForm(string key, string score, string timeStamp) {
-            LoginForm loginForm = new LoginForm(key, score, timeStamp);
+        public void ShowLoginForm() {
+            LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
 
         }
@@ -23,15 +23,43 @@ namespace New_Perspectives
             aWelcomeLabel.Select();
         }
 
+        public bool hasInputKey() {
+            DataHandler.InputKey InputKey = DataHandler.GetInputKey();
+            if (InputKey.Key == "default")
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public void SetEnabledAllButtons( bool setting) {
+            aButton_1.Enabled = setting;
+            aButton_2.Enabled = setting;
+            aButton_3.Enabled = setting;
+            aButton_4.Enabled = setting;
+            aButton_5.Enabled = setting;
+            aButton_6.Enabled = setting;
+            aButton_7.Enabled = setting;
+            aButton_8.Enabled = setting;
+            aButton_9.Enabled = setting;
+            aButton_10.Enabled = setting;
+        }
 
         public void RunButtonEvent(string buttonNumber) {
-            aWelcomeLabel.Select();
-            String timeStamp = GetTimestamp(DateTime.Now);
-            string score = buttonNumber;
-            String Key = "IamAKey";
-            ShowLoginForm(Key, score, timeStamp);
-            data_handler.sendUserMoodToApi(Key, score, timeStamp);
-            MinimiseWindow();
+            //DataHandler.SetInputKey("default");
+            if (hasInputKey() == false)
+            {
+                ShowLoginForm();
+            }
+            else
+            {
+                aWelcomeLabel.Select();
+                String timeStamp = GetTimestamp(DateTime.Now);
+                string score = buttonNumber;
+                String Key = DataHandler.GetInputKey().Key;
+                data_handler.sendUserMoodToApi(Key, score, timeStamp);
+                MinimiseWindow();
+            }
         }
 
 
@@ -52,7 +80,6 @@ namespace New_Perspectives
 
 
         DataHandler data_handler = new DataHandler();
-        string name = "john";
 
         private void aButton_1_Click(object sender, EventArgs e)
         {
