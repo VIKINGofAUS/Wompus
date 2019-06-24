@@ -1,65 +1,74 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace New_Perspectives
 {
     public partial class Form1 : Form
     {
+        DataHandler data_handler = new DataHandler();
+        List<string> Questions = new List<string>();
         public string getdata;
         public Form1()
         {
             InitializeComponent();
         }
 
-        public void ShowLoginForm() {
-            LoginForm loginForm = new LoginForm();
+        public void ShowLoginForm(string version) {
+            LoginForm loginForm = new LoginForm(version);
             loginForm.ShowDialog();
+        }
 
+
+        private void SetButtonVisiblity(bool abool) {
+            aRegisterButton.Visible = abool;
+            aSignUpButton.Visible = abool;
+        }
+
+        private bool LoadQuestions() {
+            Questions = DataHandler.ReturnQuestionsFromInternalTable();
+            if (Questions.Count < 1) {
+                data_handler.FetchGroupQuestionsApi();
+                Questions = DataHandler.ReturnQuestionsFromInternalTable();
+                if (Questions.Count < 1) {
+                    return false;
+                }
+            }
+            return true;
         }
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            data_handler.CheckAndCreateConfig();
             aWelcomeLabel.Select();
+            if (DataHandler.GetInputKey() == "Default")
+            {
+                //aWelcomeLabel.Text = "";
+                //keeping code for future use
+                //this.Size = new Size(420, 200);
+                SetButtonVisiblity(true);
+                aWelcomeLabel.Select();
+            }
+            else {
+                aWelcomeLabel.Text = "Welcome!";
+                aWelcomeLabel.Left = 4;
+                LoadQuestions();
+                timer1_Tick(sender, e);
+            }
+
+
         }
 
         public bool hasInputKey() {
-            DataHandler.InputKey InputKey = DataHandler.GetInputKey();
-            if (InputKey.Key == "default")
+            if (DataHandler.GetInputKey() == "Default")
             {
                 return false;
             }
             return true;
-        }
-
-        public void SetEnabledAllButtons( bool setting) {
-            aButton_1.Enabled = setting;
-            aButton_2.Enabled = setting;
-            aButton_3.Enabled = setting;
-            aButton_4.Enabled = setting;
-            aButton_5.Enabled = setting;
-            aButton_6.Enabled = setting;
-            aButton_7.Enabled = setting;
-            aButton_8.Enabled = setting;
-            aButton_9.Enabled = setting;
-            aButton_10.Enabled = setting;
-        }
-
-        public void RunButtonEvent(string buttonNumber) {
-            //DataHandler.SetInputKey("default");
-            if (hasInputKey() == false)
-            {
-                ShowLoginForm();
-            }
-            else
-            {
-                aWelcomeLabel.Select();
-                String timeStamp = GetTimestamp(DateTime.Now);
-                string score = buttonNumber;
-                String Key = DataHandler.GetInputKey().Key;
-                data_handler.sendUserMoodToApi(Key, score, timeStamp);
-                MinimiseWindow();
-            }
         }
 
 
@@ -78,62 +87,138 @@ namespace New_Perspectives
             return value.ToString("yyyyMMddHHmmssffff");
         }
 
-
-        DataHandler data_handler = new DataHandler();
-
-        private void aButton_1_Click(object sender, EventArgs e)
-        {
-            RunButtonEvent("1");
+        private int GetMostUrgentQuestion() {
+            int MostFrequentQuestion=0;
+            double Urgency=0;
+            for (int i = 0; i < Questions.Count; i++)
+            {
+                List<string> Question = Questions[i].Split(',').ToList<string>();
+                int Frequency = Int32.Parse(Question[3]);
+                DateTime date = DateTime.ParseExact(Question[4], "d", null);
+                double daysBetween = (DateTime.Today.Date - date).TotalDays;
+                double thisUrgency = daysBetween / Frequency;
+                if (thisUrgency> Urgency) {
+                    MostFrequentQuestion = i;
+                }
+            }
+            return MostFrequentQuestion;
         }
+    
+        private bool QuestionNeedsToBeAsked() {
 
-        private void aButton_2_Click(object sender, EventArgs e)
-        {
-            RunButtonEvent("2");
-        }
-
-        private void aButton_3_Click(object sender, EventArgs e)
-        {
-            RunButtonEvent("3");
-        }
-
-        private void aButton_4_Click(object sender, EventArgs e)
-        {
-            RunButtonEvent("4");
-        }
-
-        private void aButton_5_Click(object sender, EventArgs e)
-        {
-            RunButtonEvent("5");
-        }
-
-        private void aButton_6_Click(object sender, EventArgs e)
-        {
-            RunButtonEvent("6");
-        }
-
-        private void aButton_7_Click(object sender, EventArgs e)
-        {
-            RunButtonEvent("7");
-        }
-
-        private void aButton_8_Click(object sender, EventArgs e)
-        {
-            RunButtonEvent("8");
-        }
-
-        private void aButton_9_Click(object sender, EventArgs e)
-        {
-            RunButtonEvent("9");
-        }
-
-        private void aButton_10_Click(object sender, EventArgs e)
-        {
-            RunButtonEvent("10");
+            for (int i = 0; i < Questions.Count; i++)
+            {
+                List<string> Question = Questions[i].Split(',').ToList<string>();
+                int Frequency = Int32.Parse(Question[3]);
+                DateTime date = DateTime.ParseExact(Question[4], "d", null);
+                double daysBetween = (DateTime.Today.Date - date).TotalDays;
+                if (daysBetween/Frequency >1) {
+                    return true;
+                }
+                /*
+                 ID
+                 Question
+                 Type
+                 Frequency
+                 Last answered
+                 */
+            }
+            return false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            MaximizeWindow();
+            if (LoadQuestions())
+            {
+                string LAQD = DataHandler.GetLastAnsweredQuestionDate();
+                DateTime LastAnsweredQuestionDate = DateTime.ParseExact(LAQD, "d", null);
+                if (LastAnsweredQuestionDate.Date < DateTime.Today.Date && QuestionNeedsToBeAsked())
+                {
+                    int MostUrgentQuestionNumber = GetMostUrgentQuestion();
+                    AskQuestion(Questions[MostUrgentQuestionNumber]);
+                }
+            }
+            //if any questions need answering
+            //  Show question window
+            //  MaximizeWindow();
+            //MaximizeWindow();
+        }
+
+        private void Form1_Resize(object sender, System.EventArgs e)
+        {
+            if (FormWindowState.Minimized == WindowState)
+                Hide();
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void aWelcomeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowYesNoQuestion(List<string> Question) {
+            DialogResult dialogResult = MessageBox.Show(Question[1], "Questionaire", MessageBoxButtons.YesNo);
+            string answer = dialogResult.ToString();
+            data_handler.AnswerQuestionApi(answer, Question[0]);
+        }
+
+        private void AskQuestion(string InputQuestion) {
+            List<string> Question = InputQuestion.Split(',').ToList<string>();
+            string type = Question[2];
+            if (type =="y/n") {
+                ShowYesNoQuestion(Question);
+            }
+
+
+            var a = "";
+            a = "";
+        }
+
+        private void AskFirstQuestion() {
+            if (LoadQuestions()) {
+                int QuestionToAsk = 0;
+                int HighestFrequency =0;
+                for (int i = 0; i < Questions.Count;i++)
+                {
+                    /*
+                     [0]ID
+                     [1]Question
+                     [2]Type
+                     [3]Frequency
+                     [4]Last answered
+                     */
+                    List<string> Question = Questions[i].Split(',').ToList<string>();
+                    if (Int32.Parse(Question[3])> HighestFrequency) {
+                        QuestionToAsk = i;
+                        HighestFrequency = Int32.Parse(Question[3]);
+                    }
+                }
+                AskQuestion(Questions[QuestionToAsk]);
+
+            }
+        }
+
+        private void aSignUpButton_Click(object sender, EventArgs e)
+        {
+            ShowLoginForm("Sign In");
+            aWelcomeLabel.Text = "SignedIn Successfully";
+            aWelcomeLabel.Left = 4;
+            SetButtonVisiblity(false);
+            AskFirstQuestion();
+        }
+
+        private void aRegisterButton_Click(object sender, EventArgs e)
+        {
+            ShowLoginForm("Register");
+            aWelcomeLabel.Text = "Successfully Registered :)";
+            aWelcomeLabel.Left = 4;
+            SetButtonVisiblity(false);
+            AskFirstQuestion();
         }
     }
 }

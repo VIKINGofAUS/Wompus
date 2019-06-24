@@ -74,6 +74,18 @@
 			<Component Id="New_Perspectives.exe" Guid="9122ca8c-a4f0-49a0-99b7-5173d3cb1ed9">
 			  <File Id="New_Perspectives.exe" Name="New Perspectives.exe" Source="$(var.New Perspectives_TargetDir)New Perspectives.exe" />
 			</Component>
+			
+			
+<!--			<Component Id="Icon.ico" Guid="105be03a-e5d8-45b6-a197-4bef17b17770">
+			  <File Id="Icon.ico" Name="Icon.ico" Source="$(var.New Perspectives_TargetDir)Icon.ico" />
+			</Component>
+-->			
+			<Component Id="Config.txt" Guid="c0fcad87-4f1d-4951-8d4f-8eb1f128b589">
+			  <File Id="Config.txt" Name="Config.txt" Source="$(var.New Perspectives_TargetDir)Config.txt" />
+			</Component>
+			<Component Id="Newtonsoft.Json.dll" Guid="8157ce10-cde1-4ac4-84d6-48e31e1ae326">
+			  <File Id="Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Source="$(var.New Perspectives_TargetDir)Newtonsoft.Json.dll" />
+			</Component>
 		</ComponentGroup>
 	</Fragment>
 </Wix>

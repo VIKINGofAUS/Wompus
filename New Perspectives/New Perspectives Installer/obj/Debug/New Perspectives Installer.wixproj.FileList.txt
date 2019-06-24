@@ -6,3 +6,7 @@ obj\Debug\New Perspectives Installer.wixproj.BindOutputsFileListnull.txt
 obj\Debug\New Perspectives Installer.wixproj.BindBuiltOutputsFileListnull.txt
 C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives Installer\bin\Debug\New_Perspectives_Installer.msi
 C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives Installer\bin\Debug\New_Perspectives_Installer.wixpdb
+C:\Users\61421\Documents\Business Surveys application\New Perspectives\New Perspectives Installer\bin\Debug\New_Perspectives_Installer.msi
+C:\Users\61421\Documents\Business Surveys application\New Perspectives\New Perspectives Installer\bin\Debug\New_Perspectives_Installer.wixpdb
+C:\Users\61421\Documents\Business Surveys application\New Perspectives - Copy\New Perspectives Installer\bin\Debug\New_Perspectives_Installer.msi
+C:\Users\61421\Documents\Business Surveys application\New Perspectives - Copy\New Perspectives Installer\bin\Debug\New_Perspectives_Installer.wixpdb

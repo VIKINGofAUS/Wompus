@@ -1,3 +1,5 @@
-C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\bin\Debug\New Perspectives.exe
-C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\bin\Debug\New Perspectives.exe.config
-C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\bin\Debug\RestSharp.dll
+C:\Users\61421\Documents\Business Surveys application\New Perspectives - Copy\New Perspectives\bin\Debug\Config.txt
+C:\Users\61421\Documents\Business Surveys application\New Perspectives - Copy\New Perspectives\bin\Debug\New Perspectives.exe
+C:\Users\61421\Documents\Business Surveys application\New Perspectives - Copy\New Perspectives\bin\Debug\New Perspectives.exe.config
+C:\Users\61421\Documents\Business Surveys application\New Perspectives - Copy\New Perspectives\bin\Debug\Newtonsoft.Json.dll
+C:\Users\61421\Documents\Business Surveys application\New Perspectives - Copy\New Perspectives\bin\Debug\RestSharp.dll
