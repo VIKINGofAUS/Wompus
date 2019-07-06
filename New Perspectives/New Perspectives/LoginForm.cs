@@ -21,6 +21,19 @@ namespace New_Perspectives
             InitializeComponent();
         }
 
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public LoginForm(string version)
         {
             InitializeComponent();
@@ -56,10 +69,29 @@ namespace New_Perspectives
 
 
         private void RegisterUser() {
+            if (IsValidEmail(aEmailTextbox.Text) == false) {
+                aincorrectLoginLable.Visible = true;
+                aincorrectLoginLable.Text = "Invalid Email format";
+                return;
+            }
+            if (aPasswordTexbox.Text.Length < 8)
+            {
+                aincorrectLoginLable.Visible = true;
+                aincorrectLoginLable.Text = "Password Must be at least 8 long";
+                return;
+            }
+            if (aKeyBox.Text.Length < 1)
+            {
+                aincorrectLoginLable.Visible = true;
+                aincorrectLoginLable.Text = "A key must be entered";
+                return;
+            }
             string response = data_handler.RegisterApi(aEmailTextbox.Text,aPasswordTexbox.Text,aKeyBox.Text);
             if (response == "Registration Complete") {
                 this.Close();
             }
+            aincorrectLoginLable.Visible = true;
+            aincorrectLoginLable.Text = response;
         }
         private void SignInUser() {
             string response = data_handler.SignInApi(aEmailTextbox.Text, aPasswordTexbox.Text);

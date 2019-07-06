@@ -52,11 +52,12 @@
             this.aPasswordTexbox.Name = "aPasswordTexbox";
             this.aPasswordTexbox.Size = new System.Drawing.Size(197, 22);
             this.aPasswordTexbox.TabIndex = 0;
+            this.aPasswordTexbox.UseSystemPasswordChar = true;
             // 
             // aEmailLable
             // 
             this.aEmailLable.AutoSize = true;
-            this.aEmailLable.Location = new System.Drawing.Point(33, 38);
+            this.aEmailLable.Location = new System.Drawing.Point(23, 38);
             this.aEmailLable.Name = "aEmailLable";
             this.aEmailLable.Size = new System.Drawing.Size(42, 17);
             this.aEmailLable.TabIndex = 1;
@@ -65,7 +66,7 @@
             // aPasswordLable
             // 
             this.aPasswordLable.AutoSize = true;
-            this.aPasswordLable.Location = new System.Drawing.Point(33, 73);
+            this.aPasswordLable.Location = new System.Drawing.Point(23, 73);
             this.aPasswordLable.Name = "aPasswordLable";
             this.aPasswordLable.Size = new System.Drawing.Size(69, 17);
             this.aPasswordLable.TabIndex = 2;
@@ -94,11 +95,11 @@
             // aKeyLable
             // 
             this.aKeyLable.AutoSize = true;
-            this.aKeyLable.Location = new System.Drawing.Point(33, 101);
+            this.aKeyLable.Location = new System.Drawing.Point(23, 101);
             this.aKeyLable.Name = "aKeyLable";
-            this.aKeyLable.Size = new System.Drawing.Size(32, 17);
+            this.aKeyLable.Size = new System.Drawing.Size(95, 17);
             this.aKeyLable.TabIndex = 5;
-            this.aKeyLable.Text = "Key";
+            this.aKeyLable.Text = "Company Key";
             this.aKeyLable.Visible = false;
             // 
             // aKeyBox

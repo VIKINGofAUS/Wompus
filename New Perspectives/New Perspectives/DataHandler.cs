@@ -17,7 +17,7 @@ namespace New_Perspectives
     class DataHandler
     {
         //private const string URL = "http://www.wumpos.com";
-        private const string URL = "http://businesssurvey.com.au";
+        private const string URL = "https://businesssurvey.com.au";
         private static string GetConfigPath()
         {
             return "C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming" + "\\BusinessSurveys" + "\\Config.txt";
