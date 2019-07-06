@@ -84,7 +84,7 @@ namespace New_Perspectives
         public string RegisterApi(string Email, string Password, string Key)
         {
             var client = new RestClient(URL);
-            var request = new RestRequest("/api/RegisterUser.php", Method.POST);
+            var request = new RestRequest("/api/ApplicationRegisterUser.php", Method.POST);
             request.AddParameter("Email", Email); // adds to POST or URL querystring based on Method
             request.AddParameter("Password", Password);
             request.AddParameter("Key", Key);
