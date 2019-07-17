@@ -94,6 +94,18 @@ namespace New_Perspectives
             aincorrectLoginLable.Text = response;
         }
         private void SignInUser() {
+            if (IsValidEmail(aEmailTextbox.Text) == false)
+            {
+                aincorrectLoginLable.Visible = true;
+                aincorrectLoginLable.Text = "Invalid Email format";
+                return;
+            }
+            if (aPasswordTexbox.Text.Length < 8)
+            {
+                aincorrectLoginLable.Visible = true;
+                aincorrectLoginLable.Text = "Password Must be at least 8 long";
+                return;
+            }
             string response = data_handler.SignInApi(aEmailTextbox.Text, aPasswordTexbox.Text);
             if (response == "Sign In Successfull")
             {

@@ -45,6 +45,8 @@ namespace New_Perspectives
         {
             data_handler.CheckAndCreateConfig();
             aWelcomeLabel.Select();
+            text255 text255From = new text255();
+            text255From.ShowDialog();
             if (DataHandler.GetInputKey() == "Default")
             {
                 //aWelcomeLabel.Text = "";
@@ -174,6 +176,16 @@ namespace New_Perspectives
                 ShowYesNoQuestion(Question);
             }
 
+            else if (type =="text255") {
+                text255 text255From = new text255();
+                text255From.ShowDialog();
+
+            }
+
+            else if (type == "Scale_1_to_10")
+            {
+
+            }
 
             var a = "";
             a = "";
@@ -206,19 +218,24 @@ namespace New_Perspectives
         private void aSignUpButton_Click(object sender, EventArgs e)
         {
             ShowLoginForm("Sign In");
-            aWelcomeLabel.Text = "SignedIn Successfully";
-            aWelcomeLabel.Left = 4;
-            SetButtonVisiblity(false);
-            AskFirstQuestion();
+            if (hasInputKey()) {
+                aWelcomeLabel.Text = "SignedIn Successfully";
+                aWelcomeLabel.Left = 4;
+                SetButtonVisiblity(false);
+                AskFirstQuestion();
+            }
         }
 
         private void aRegisterButton_Click(object sender, EventArgs e)
         {
             ShowLoginForm("Register");
-            aWelcomeLabel.Text = "Successfully Registered :)";
-            aWelcomeLabel.Left = 4;
-            SetButtonVisiblity(false);
-            AskFirstQuestion();
+            if (hasInputKey())
+            {
+                aWelcomeLabel.Text = "Successfully Registered :)";
+                aWelcomeLabel.Left = 4;
+                SetButtonVisiblity(false);
+                AskFirstQuestion();
+            }
         }
     }
 }
