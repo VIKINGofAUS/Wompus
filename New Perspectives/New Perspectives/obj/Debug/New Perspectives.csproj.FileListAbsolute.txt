@@ -25,7 +25,6 @@ C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\obj\Debug\New 
 C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\obj\Debug\New Perspectives.csproj.CopyComplete
 C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\obj\Debug\New Perspectives.exe
 C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\obj\Debug\New Perspectives.pdb
-C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\obj\Debug\New Perspectives.csprojAssemblyReference.cache
 C:\Users\61421\Documents\Business Surveys application\New Perspectives\New Perspectives\bin\Debug\New_perspectivesDatabase.db
 C:\Users\61421\Documents\Business Surveys application\New Perspectives\New Perspectives\bin\Debug\New Perspectives.exe.config
 C:\Users\61421\Documents\Business Surveys application\New Perspectives\New Perspectives\bin\Debug\New Perspectives.exe
@@ -70,3 +69,5 @@ C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\bin\Debug\Micr
 C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\bin\Debug\Newtonsoft.Json.dll
 C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\bin\Debug\Newtonsoft.Json.xml
 C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\obj\Debug\New_Perspectives.text255.resources
+C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\obj\Debug\New_Perspectives.Scale_1_to_10.resources
+C:\Users\61421\Documents\Wumpos\New Perspectives\New Perspectives\obj\Debug\New_Perspectives.YesNo.resources

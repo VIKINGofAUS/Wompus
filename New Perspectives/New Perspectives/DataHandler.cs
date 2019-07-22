@@ -63,6 +63,17 @@ namespace New_Perspectives
             return true;
         }
 
+        //un finished
+        public string AnswerQuestion(string Answer, string QuestionID)
+        {
+            string results = AnswerQuestionApi(Answer, QuestionID);
+            if (results == "Answered SuccessFully") {
+                SetLastAnsweredQuestionDate();
+                SetLastAnsweredDateForQuestionID(QuestionID);
+            }
+            return results;
+        }
+
         public string AnswerQuestionApi(string Answer, string QuestionID)
         {
             var client = new RestClient(URL);
@@ -72,12 +83,7 @@ namespace New_Perspectives
             request.AddParameter("Token", GetInputKey());
             IRestResponse response = client.Execute(request);
             string content = response.Content;
-            if (content.Contains("Registration Complete; Token|"))
-            {
-                string inputKey = content.Split('|')[1];
-                content = content.Split(';')[0];
-                SetInputKey(inputKey);
-            }
+            //check and removed
             return content;
         }
 
@@ -114,7 +120,7 @@ namespace New_Perspectives
             ClearQuestions();
             foreach (QuestionClass question in questions)
             {
-                string line = "Question|" + question.QuestionID + "," + question.Question + "," + question.QuestionType + "," + question.Frequency + "," + DateTime.Today.ToString("d");
+                string line = "Question|" + question.QuestionID + "," + question.Question + "," + question.QuestionType + "," + question.Frequency + "," + DateTime.Today.AddDays(-365).ToString("d");
 
                 string a = GetConfigPath();
 
@@ -163,6 +169,23 @@ namespace New_Perspectives
             return "No InputKey Found";
         }
 
+        //untested
+        public static void SetLastAnsweredQuestionDate()
+        {
+            List<string> NewConfig = new List<string>();
+            foreach (string line in ReadConfig())
+            {
+                string LineToReWrite = line;
+                if (line.Contains("LastAnswered|"))
+                {
+                    LineToReWrite = "LastAnswered|" + DateTime.Today.ToString("d");
+                }
+                NewConfig.Add(LineToReWrite);
+            }
+            File.WriteAllLines(GetConfigPath(), NewConfig);
+        }
+
+
         public static string GetLastAnsweredQuestionDate()
         {
             foreach (string line in ReadConfig())
@@ -172,7 +195,7 @@ namespace New_Perspectives
                     return line.Split('|')[1];
                 }
             }
-            return "No InputKey Found";
+            return "Last Answered Question Date";
         }
 
         public static List<string> ReturnQuestionsFromInternalTable()
@@ -201,6 +224,27 @@ namespace New_Perspectives
             return ReturnValues;
         }
 
+        //untested
+        public static void SetLastAnsweredDateForQuestionID(string questionID)
+        {
+            List<string> NewConfig = new List<string>();
+            List<string> lineBits = new List<string>();
+            //string NewConfig = "";
+            foreach (string line in ReadConfig())
+            {
+                string LineToReWrite = line;
+                if (line.Contains("Question|" + questionID))
+                {
+                    //bit [4] is the questions last answered index
+                    lineBits = line.Split(',').ToList();
+                    //set last answered to todays date
+                    lineBits[4] = DateTime.Today.ToString("d");
+                    LineToReWrite = String.Join(",", lineBits.ToArray());
+                }
+                NewConfig.Add(LineToReWrite);
+            }
+            File.WriteAllLines(GetConfigPath(), NewConfig);
+        }
 
         public static void SetInputKey(string inputKey)
         {

@@ -67,7 +67,7 @@
             this.aSignUpButton.Name = "aSignUpButton";
             this.aSignUpButton.Size = new System.Drawing.Size(147, 50);
             this.aSignUpButton.TabIndex = 24;
-            this.aSignUpButton.Text = "Sign up";
+            this.aSignUpButton.Text = "Sign In";
             this.aSignUpButton.UseVisualStyleBackColor = true;
             this.aSignUpButton.Visible = false;
             this.aSignUpButton.Click += new System.EventHandler(this.aSignUpButton_Click);

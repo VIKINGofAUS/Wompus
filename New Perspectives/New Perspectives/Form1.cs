@@ -11,6 +11,13 @@ namespace New_Perspectives
     {
         DataHandler data_handler = new DataHandler();
         List<string> Questions = new List<string>();
+        /* question
+        [0] ID
+        [1] Question
+        [2] Type
+        [3] Frequency
+        [4] Last answered
+         */
         public string getdata;
         public Form1()
         {
@@ -45,8 +52,6 @@ namespace New_Perspectives
         {
             data_handler.CheckAndCreateConfig();
             aWelcomeLabel.Select();
-            text255 text255From = new text255();
-            text255From.ShowDialog();
             if (DataHandler.GetInputKey() == "Default")
             {
                 //aWelcomeLabel.Text = "";
@@ -101,6 +106,7 @@ namespace New_Perspectives
                 double thisUrgency = daysBetween / Frequency;
                 if (thisUrgency> Urgency) {
                     MostFrequentQuestion = i;
+                    Urgency = thisUrgency;
                 }
             }
             return MostFrequentQuestion;
@@ -163,32 +169,40 @@ namespace New_Perspectives
 
         }
 
-        private void ShowYesNoQuestion(List<string> Question) {
-            DialogResult dialogResult = MessageBox.Show(Question[1], "Questionaire", MessageBoxButtons.YesNo);
-            string answer = dialogResult.ToString();
-            data_handler.AnswerQuestionApi(answer, Question[0]);
-        }
-
         private void AskQuestion(string InputQuestion) {
+            //if previos question up skip
+            int count = 0;
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+            {
+                if (Application.OpenForms[i].Visible == true)
+                    count++;
+            }
+            if (count > 1) {
+                return;
+            } // Active Forms value :)
+
+
             List<string> Question = InputQuestion.Split(',').ToList<string>();
             string type = Question[2];
-            if (type =="y/n") {
-                ShowYesNoQuestion(Question);
+            if (type == "y/n")
+            {
+                YesNo yesNoForm = new YesNo(Question);
+                yesNoForm.ShowDialog();
             }
 
-            else if (type =="text255") {
-                text255 text255From = new text255();
+            else if (type == "text255")
+            {
+                text255 text255From = new text255(Question);
                 text255From.ShowDialog();
 
             }
 
             else if (type == "Scale_1_to_10")
             {
-
+                Scale_1_to_10 scale_1_To_10Form = new Scale_1_to_10(Question);
+                scale_1_To_10Form.ShowDialog();
             }
-
-            var a = "";
-            a = "";
+            
         }
 
         private void AskFirstQuestion() {
